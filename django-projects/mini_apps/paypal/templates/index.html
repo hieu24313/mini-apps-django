@@ -1,16 +1,51 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <title>Mini-apps-django</title>
-</head>
-<body>
-<div>
-    <h1>Mini-apps-django</h1>
-    <a href="/paypal/create_payment/">Paypal-app</a>
-    <h3>Account Test Paypal</h3>
-    <h3>username: sb-h6ltd29365122@personal.example.com</h3>
-    <h3>password: test123456</h3>
-</div>
-</body>
-</html>
+<!--<!DOCTYPE html>-->
+<!--<html lang="en">-->
+<!--<head>-->
+<!--    <meta charset="UTF-8">-->
+<!--    <title>Mini-apps-django</title>-->
+<!--</head>-->
+<!--<body>-->
+<!--<div>-->
+<!--    <h1>Mini-apps-django</h1>-->
+<!--    <a href="/paypal/create_payment/">Paypal-app</a>-->
+<!--    <h3>Account Test Paypal</h3>-->
+<!--    <h3>username: sb-h6ltd29365122@personal.example.com</h3>-->
+<!--    <h3>password: test123456</h3>-->
+<!--</div>-->
+<!--</body>-->
+<!--</html>-->
+{% extends "base_layout.html" %}
+{% block content %}
+    <div style="display:flex">
+        <div class="panel panel-default" style="margin-right:10px; width:50%">
+        <!-- Default panel contents -->
+        <div class="panel-heading">{{ title }}</div>
+        <div class="table-responsive">
+            <ul class="list-group">
+                <i class="list-group-item"><a href="{% url "payment" %}">Demo Thanh toán (click here)</a></i>
+                <i class="list-group-item"><a href="{% url "query" %}">Demo Query (Kiểm tra kết quả Giao dịch tại
+                    VNPAY)</a></i>
+                <i class="list-group-item"><a href="{% url "refund" %}">Demo Refund (Gửi yêu cầu hoàn tiền cho giao
+                    dịch)</a></i>
+                <i class="list-group-item"><h3>Thẻ Test VNPAY</h3></i>
+                <i class="list-group-item"><h3>Ngân hàng: NCB</h3></i>
+                <i class="list-group-item"><h3>Số thẻ: 9704198526191432198</h3></i>
+                <i class="list-group-item"><h3>Tên chủ thẻ: NGUYEN VAN A</h3></i>
+                <i class="list-group-item"><h3>Ngày phát hành: 07/15</h3></i>
+                <i class="list-group-item"><h3>Mật khẩu OTP: 123456</h3></i>
+            </ul>
+        </div>
+    </div>
+    <div class="panel panel-default" style="width:50%">
+            <div class="panel-heading">PAYPAL DEMO</div>
+            <div class="table-responsive">
+            <ul class="list-group">
+                <i class="list-group-item"><a href="/paypal/create_payment/">Demo Thanh toán (click here)</a></i>
+                <i class="list-group-item"><h3>Account Test Paypal</h3></i>
+                <i class="list-group-item"><h3>username: sb-h6ltd29365122@personal.example.com</h3></i>
+                <i class="list-group-item"><h3>password: test123456</h3></i>
+            </ul>
+            </div>
+    </div>
+    </div>
+{% endblock %}
